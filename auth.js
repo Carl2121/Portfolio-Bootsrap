@@ -3,15 +3,26 @@
 // Register User
 function registerUser(event) {
     event.preventDefault();
+    let email = document.getElementById("registerEmail").value;
     let username = document.getElementById("registerUsername").value;
+    let phone = document.getElementById("registerPhone").value;
+    let role = document.getElementById("registerRole").value;
     let password = document.getElementById("registerPassword").value;
 
-    if (localStorage.getItem(username)) {
-        alert("User already exists!");
+    // Check if user already exists
+    if (localStorage.getItem(email)) {
+        alert("User with this email already exists!");
         return;
     }
 
-    localStorage.setItem(username, JSON.stringify({ password: password }));
+    // Store user data in localStorage
+    localStorage.setItem(email, JSON.stringify({
+        username: username,
+        phone: phone,
+        role: role,
+        password: password
+    }));
+
     alert("Registration successful! You can now log in.");
     window.location.href = "login.html";
 }
@@ -19,16 +30,16 @@ function registerUser(event) {
 // Login User
 function loginUser(event) {
     event.preventDefault();
-    let username = document.getElementById("loginUsername").value;
+    let email = document.getElementById("loginEmail").value;
     let password = document.getElementById("loginPassword").value;
 
-    let userData = JSON.parse(localStorage.getItem(username));
+    let userData = JSON.parse(localStorage.getItem(email));
     if (userData && userData.password === password) {
-        localStorage.setItem("loggedInUser", username);
-        alert("Login successful!");
+        localStorage.setItem("loggedInUser", email);
+        alert(`Login successful! Welcome, ${userData.username} (${userData.role}).`);
         window.location.href = "index.html";
     } else {
-        alert("Invalid username or password!");
+        alert("Invalid email or password!");
     }
 }
 
