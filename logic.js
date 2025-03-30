@@ -4,31 +4,82 @@ document.addEventListener("DOMContentLoaded", () => {
   // Quiz Data
   const questions = [
     {
-      question: "What is the brain of the computer?",
-      options: ["RAM", "Motherboard", "CPU", "Hard Drive"],
-      answer: "CPU",
+      question: "What does HTML stand for?",
+      options: [
+        "Hyper Text Markup Language",
+        "High Text Machine Language",
+        "Hyperlink and Text Markup Language",
+        "Home Tool Markup Language",
+      ],
+      answer: "Hyper Text Markup Language",
     },
     {
-      question: "Which component stores long-term data?",
-      options: ["RAM", "Hard Drive", "GPU", "Power Supply"],
-      answer: "Hard Drive",
+      question: "What is the purpose of CSS?",
+      options: [
+        "To structure the webpage",
+        "To add styles to HTML",
+        "To program backend logic",
+        "To create database connections",
+      ],
+      answer: "To add styles to HTML",
     },
     {
-      question: "Which part connects all components together?",
-      options: ["RAM", "Motherboard", "Power Supply", "GPU"],
-      answer: "Motherboard",
+      question: "Which HTML tag is used for the largest heading?",
+      options: ["h1", "h6", "head", "header"],
+      answer: "h1",
     },
     {
-      question: "Which memory is volatile?",
-      options: ["SSD", "Hard Drive", "RAM", "USB Flash Drive"],
-      answer: "RAM",
+      question: "Which CSS property is used to change the text color?",
+      options: ["color", "font-style", "text-color", "background-color"],
+      answer: "color",
     },
     {
-      question: "What component is responsible for graphics processing?",
-      options: ["CPU", "Power Supply", "GPU", "Motherboard"],
-      answer: "GPU",
+      question: "Which HTML attribute is used to define inline styles?",
+      options: ["class", "id", "style", "font"],
+      answer: "style",
+    },
+    {
+      question: "What does JavaScript allow you to do?",
+      options: [
+        "Style HTML",
+        "Store data in a database",
+        "Add interactivity to webpages",
+        "Create server side applications only",
+      ],
+      answer: "Add interactivity to webpages",
+    },
+    {
+      question: "Which HTML element is used to insert a line break?",
+      options: ["br", "lb", "break", "hr"],
+      answer: "br",
+    },
+    {
+      question: "Which CSS property controls the spacing between lines of text?",
+      options: ["letter-spacing", "line-height", "word-spacing", "text-indent"],
+      answer: "line-height",
+    },
+    {
+      question: "What is the correct JavaScript syntax to write 'Hello World' in an alert box?",
+      options: [
+        "msgBox('Hello World');",
+        "alertBox('Hello World');",
+        "msg('Hello World');",
+        "alert('Hello World');",
+      ],
+      answer: "alert('Hello World');",
+    },
+    {
+      question: "Which symbol is used for single-line comments in JavaScript?",
+      options: [
+        "/* comment */",
+        "// comment",
+        "<!-- comment -->",
+        "# comment",
+      ],
+      answer: "// comment",
     },
   ];
+
 
   // DOM Elements
   const startScreen = document.getElementById("start-screen");
@@ -64,9 +115,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     let currentQuestion = questions[currentQuestionIndex];
-    questionTitle.innerText = `Question ${currentQuestionIndex + 1}: ${
-      currentQuestion.question
-    }`;
+    questionTitle.innerText = `Question ${currentQuestionIndex + 1}: ${currentQuestion.question
+      }`;
     optionsContainer.innerHTML = "";
 
     currentQuestion.options.forEach((option) => {

@@ -16,6 +16,8 @@
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     }
   </style>
+  <!-- Favicon Links -->
+  <link rel="icon" href="assets/Abyssal_Hunters.png" type="image/png" />
 </head>
 
 <body class="bg-light">
@@ -27,40 +29,14 @@
   </script>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Welcome to E-Learning Hub</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link nav-link-custom" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-custom" href="index.html#projects">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-custom" href="index.html#contact">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="quiz.html">Quiz</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-danger" href="#" onclick="logoutUser()">Logout</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <div id="navbar-container"></div>
+
 
 
   <!-- Start Screen -->
   <div id="start-screen"
     class="d-flex flex-column justify-content-center align-items-center vh-100 bg-secondary text-white">
-    <h1 class="mb-3">Welcome to the Ultimate Quiz Challenge!</h1>
+    <h1 class="mb-3">Welcome to E-Learning Hub's Quiz Challenge!</h1>
     <p class="mb-4 text-center px-3">
       Test your knowledge and challenge yourself with our interactive quiz.
       Are you ready to see how much you know? Click the button below to start and have fun!
@@ -93,6 +69,13 @@
       </div>
     </div>
   </div>
+
+  <script>
+    fetch("navbar.html")
+      .then(response => response.text())
+      .then(data => document.getElementById("navbar-container").innerHTML = data)
+      .catch(error => console.error("Error loading navbar:", error));
+  </script>
 
   <script src="logic.js"></script>
   <script>
