@@ -8,6 +8,31 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Favicon Links -->
     <link rel="icon" href="assets/Abyssal_Hunters.png" type="image/png" />
+    <style>
+        body {
+            background: url('assets/grayish2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            /* Adjust background coverage */
+            background-attachment: fixed;
+            /* Keeps background fixed while scrolling */
+            min-height: 100vh;
+            /* Ensures full height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 350px;
+            /* Ensures it doesn’t stretch too much */
+            background: rgba(255, 255, 255, 0.9);
+            /* Slight transparency for better readability */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
 
 <body class="d-flex justify-content-center align-items-center vh-100 bg-light">
@@ -38,7 +63,7 @@
                 <label class="form-label">Password</label>
                 <input type="password" id="registerPassword" class="form-control" required>
             </div>
-            <button type="submit" class="btn btn-primary w-100">Register</button>
+            <button type="submit" class="btn btn-secondary w-100">Register</button>
         </form>
         <p class="mt-3 text-center">Already have an account? <a href="login.html">Login</a></p>
     </div>
