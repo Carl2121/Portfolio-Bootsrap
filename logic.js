@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Script loaded, waiting for user interaction...");
 
-  // Quiz Data
+
   const questions = [
     {
       question: "What does HTML stand for?",
